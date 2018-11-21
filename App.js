@@ -13,6 +13,7 @@ import { createStackNavigator } from 'react-navigation'
 import RouteConfig from './src/router/RouterConfig'
 import StackNavigatorConfig from './src/router/StackNavigatorConfig'
 import store from "./src/store";
+import './src/utils/storage';
 
 const Navigator = createStackNavigator(RouteConfig, StackNavigatorConfig);
 

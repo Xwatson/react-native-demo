@@ -1,5 +1,5 @@
 import React from 'react';
-import { View, Text, Button } from "react-native";
+import { View, Text, Button, TextInput } from "react-native";
 import { observer, inject } from "mobx-react";
 import Header from '../components/Header';
 
@@ -9,6 +9,9 @@ export default class Home extends React.Component {
     static navigationOptions = ({ navigation }) => ({
         tabBarLabel: '首页'
     })
+    state = {
+        text: ''
+    }
     constructor(props) {
         super(props);
         this.homeStore = this.props.homeStore
@@ -23,7 +26,21 @@ export default class Home extends React.Component {
                 <Button title="add" onPress={() => this.homeStore.plus()} />
                 <Text>{num}</Text>
                 <Button title="Minu" onPress={() => this.homeStore.minus()} />
+                <TextInput
+                    style={{height: 40, borderColor: 'gray', borderWidth: 1}}
+                    onChangeText={(text) => this.setState({text})}
+                    value={this.state.text}
+                />
+                <Button title="存" onPress={this.saveStorage()} />
+                <Text>123</Text>
+                <Button title="取" onPress={this.loadStorage()} />
             </View>
         )
+    }
+    saveStorage = () => {
+
+    }
+    loadStorage = () => {
+
     }
 }

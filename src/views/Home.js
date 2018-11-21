@@ -1,16 +1,17 @@
 import React from 'react';
-import { View, Text } from "react-native";
-import { inject, observer } from "mobx-react/native";
+import { View, Text, Button } from "react-native";
+import { observer, inject } from "mobx-react";
 import Header from '../components/Header';
 
-@inject('homeStore')
-@observer // 监听当前组件
+@inject('homeStore') // 将store传递给组件props
+@observer // 转换响应式组件
 export default class Home extends React.Component {
     static navigationOptions = ({ navigation }) => ({
         tabBarLabel: '首页'
     })
     constructor(props) {
         super(props);
+        console.log('顶顶顶', props)
         this.homeStore = this.props.homeStore
     }
 
@@ -20,13 +21,9 @@ export default class Home extends React.Component {
             <View>
                 <Header title={'首页'} />
                 <Text>{text}</Text>
-                <Button primary onPress={() => this.homeStore.plus()}>
-                    <Text>add</Text>
-                </Button>
+                <Button title="add" onPress={() => this.homeStore.plus()} />
                 <Text>{num}</Text>
-                <Button primary onPress={() => this.homeStore.minus()}>
-                    <Text>Minu</Text>
-                </Button>
+                <Button title="Minu" onPress={() => this.homeStore.minus()} />
             </View>
         )
     }

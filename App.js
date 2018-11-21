@@ -19,7 +19,7 @@ const Navigator = createStackNavigator(RouteConfig, StackNavigatorConfig);
 export default class App extends Component {
   render() {
     return (
-      <Provider store={store}>
+      <Provider {...store} >
         <Navigator />
       </Provider>
     )

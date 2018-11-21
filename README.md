@@ -1,2 +1,5 @@
 # react-native-demo
-一个基于react-native 0.57基础框架结构
+基于react-native 0.57 + mobx + Axios基础框架
+ > * mobx4.x
+ > * Axios
+ > * Storage

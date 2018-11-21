@@ -11,7 +11,6 @@ export default class Home extends React.Component {
     })
     constructor(props) {
         super(props);
-        console.log('顶顶顶', props)
         this.homeStore = this.props.homeStore
     }
 

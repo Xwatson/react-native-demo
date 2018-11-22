@@ -10,7 +10,8 @@ export default class Home extends React.Component {
         tabBarLabel: '首页'
     })
     state = {
-        text: ''
+        text: '',
+        loadText: ''
     }
     constructor(props) {
         super(props);
@@ -27,20 +28,30 @@ export default class Home extends React.Component {
                 <Text>{num}</Text>
                 <Button title="Minu" onPress={() => this.homeStore.minus()} />
                 <TextInput
-                    style={{height: 40, borderColor: 'gray', borderWidth: 1}}
+                    style={{height: 40, borderColor: 'gray', borderWidth: 1, marginTop: 5, marginBottom: 5}}
                     onChangeText={(text) => this.setState({text})}
                     value={this.state.text}
                 />
-                <Button title="存" onPress={this.saveStorage()} />
-                <Text>123</Text>
-                <Button title="取" onPress={this.loadStorage()} />
+                <Button title="存" onPress={() => this.saveStorage()} />
+                <Text>{this.state.loadText}</Text>
+                <Button title="取" onPress={() => this.loadStorage()} />
             </View>
         )
     }
     saveStorage = () => {
-
+        storage.save({
+            key: 'homeTextState',
+            data: {
+                text: this.state.text
+            }
+        })
     }
     loadStorage = () => {
-
+        storage.load({
+            key: 'homeTextState'
+        }).then(ret => {
+            console.log('杀杀杀', ret);
+            this.setState({ loadText: ret.text })
+        }) 
     }
 }

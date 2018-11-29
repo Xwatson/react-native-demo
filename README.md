@@ -3,4 +3,4 @@
  > * mobx4.x
  > * Axios
  > * Storage
- > * 阿里云消息推送推送（仅配置了安卓端，在AndroidManifest.xml中修改appkey和appsecret）
+ > * 阿里云消息推送（仅配置了安卓端，在AndroidManifest.xml中修改appkey和appsecret）

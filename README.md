@@ -3,4 +3,5 @@
  > * mobx4.x
  > * Axios
  > * Storage
- > * 阿里云消息推送（目前仅配置了安卓端，在AndroidManifest.xml中修改appkey和appsecret）
+ > * react-native-vector-icons
+ > * 集成信鸽推送（react-native-xinge-push支持华为、小米、魅族官方推送通道）

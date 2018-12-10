@@ -1,5 +1,5 @@
 # react-native-demo
-基于react-native 0.57 + mobx + Axios基础框架
+基于react-native 0.57 + antd-mobile-rn + mobx + Axios基础框架
  > * mobx4.x
  > * Axios
  > * Storage

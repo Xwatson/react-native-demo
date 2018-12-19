@@ -2,7 +2,7 @@ import React, {Component} from 'react';
 import { View, Text, StyleSheet, ScrollView } from "react-native";
 import Header from "../../components/Header";
 import Icon from "react-native-vector-icons/Feather";
-import { List, Tag } from 'antd-mobile-rn';
+import { List, Tag } from '@ant-design/react-native';
 
 const Item = List.Item;
 const Brief = Item.Brief;

@@ -1,10 +1,10 @@
-import http from '../utils/http';
+import { request } from '../utils/http';
 import { UserApi } from "./api";
 
 export default async(params) => {
     const { id } = params;
      
-    const response = await http.request(UserApi.getUser(id));
+    const response = await request(UserApi.getUser(id));
     if (response) {
         storage.save({
             key: 'user',

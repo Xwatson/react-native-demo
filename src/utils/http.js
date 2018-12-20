@@ -1,6 +1,6 @@
 import axios from 'axios';
 
-const request = (url, method = 'GET', data = {}, options = {}) => {
+export const request = (url, method = 'GET', data = {}, options = {}) => {
     return new Promise((resolve, reject) => {
         axios.request({
             url,
@@ -20,5 +20,3 @@ const request = (url, method = 'GET', data = {}, options = {}) => {
         })
     });
 }
-
-export { request }
